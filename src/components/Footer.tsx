@@ -196,13 +196,43 @@ export function Footer() {
                 </a>
               </div>
 
-              <div className="pt-2 border-t border-white/5 space-y-1">
+              <div className="pt-3 border-t border-white/5 space-y-2">
                 <p className="text-[11px] text-zinc-400">
                   <span className="text-zinc-300 font-semibold">Club Advisor:</span> Bohi Shajahan
                 </p>
                 <p className="text-[11px] text-zinc-400">
                   <span className="text-zinc-300 font-semibold">Affiliation:</span> American International University-Bangladesh
                 </p>
+
+                {/* AIUB & OSA Institutional Endorsement Badges */}
+                <div className="pt-2">
+                  <p className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+                    Under the Governance of
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 p-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors" title="American International University-Bangladesh">
+                      <Image
+                        src="/images/aiub-logo.png"
+                        alt="American International University-Bangladesh (AIUB) Crest"
+                        width={28}
+                        height={28}
+                        className="object-contain"
+                      />
+                      <span className="text-[11px] font-medium text-zinc-300">AIUB</span>
+                    </div>
+
+                    <div className="flex items-center gap-2 p-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-colors" title="Office of Student Affairs (OSA) - AIUB">
+                      <Image
+                        src="/images/osa-logo.png"
+                        alt="Office of Student Affairs (OSA) Crest"
+                        width={28}
+                        height={28}
+                        className="object-contain"
+                      />
+                      <span className="text-[11px] font-medium text-zinc-300">OSA</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

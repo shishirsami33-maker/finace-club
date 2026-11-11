@@ -65,3 +65,4 @@ export function AnimatedCounter({ target, suffix = '', prefix = '', duration = 1
     </span>
   );
 }
+

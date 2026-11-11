@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   MapPin,
   Mail,
@@ -80,9 +81,15 @@ export default function ContactPage() {
           {/* Left: Contact Info & Interactive Map */}
           <div className="lg:col-span-5 space-y-8">
             <div className="p-8 rounded-3xl bg-[#0e100e] border border-white/10 space-y-6">
-              <h2 className="font-heading font-bold text-xl uppercase tracking-wider text-white">
-                Secretariat Coordinates
-              </h2>
+              <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/10">
+                <h2 className="font-heading font-bold text-xl uppercase tracking-wider text-white">
+                  Secretariat Coordinates
+                </h2>
+                <div className="flex items-center gap-2">
+                  <Image src="/images/aiub-logo.png" alt="AIUB Logo" width={26} height={26} className="object-contain" />
+                  <Image src="/images/osa-logo.png" alt="OSA Logo" width={26} height={26} className="object-contain" />
+                </div>
+              </div>
 
               <div className="space-y-5 text-xs sm:text-sm">
                 <div className="flex items-start gap-4">

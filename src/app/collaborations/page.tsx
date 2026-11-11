@@ -51,6 +51,34 @@ export default function CollaborationsPage() {
         </div>
       </section>
 
+      {/* Institutional Patronage & Oversight (AIUB & OSA) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-2">
+        <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/5 p-1 border border-white/10 flex items-center justify-center">
+                <Image src="/images/aiub-logo.png" alt="AIUB" width={32} height={32} className="object-contain" />
+              </div>
+              <div className="w-[1px] h-6 bg-white/15" />
+              <div className="w-10 h-10 rounded-xl bg-white/5 p-1 border border-white/10 flex items-center justify-center">
+                <Image src="/images/osa-logo.png" alt="OSA" width={32} height={32} className="object-contain" />
+              </div>
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-sm text-white uppercase">
+                Institutional Academic &amp; Regulatory Patronage
+              </h3>
+              <p className="text-xs text-zinc-400 font-sans">
+                Governed under Office of Student Affairs (OSA), American International University-Bangladesh
+              </p>
+            </div>
+          </div>
+          <span className="text-xs font-mono font-semibold text-emerald-400 bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">
+            Official University Charter
+          </span>
+        </div>
+      </section>
+
       {/* Main Partnerships Portfolio */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
         {categories.map((catGroup) => {

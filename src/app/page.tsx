@@ -72,6 +72,72 @@ export default function HomePage() {
       {/* 2. Illustrative Market Ticker */}
       <MarketTicker />
 
+      {/* Institutional Affiliation & Recognition Bar (AIUB & OSA Endorsement) */}
+      <section className="bg-[#0e110e] border-b border-white/10 py-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-gradient-to-r from-brand-deep/20 via-[#121612] to-brand-deep/10 border border-brand-green/20">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <div className="w-12 h-12 relative flex-shrink-0 bg-white/5 rounded-xl p-1.5 border border-white/10 shadow-lg" title="American International University-Bangladesh">
+                  <Image
+                    src="/images/aiub-logo.png"
+                    alt="American International University-Bangladesh (AIUB) Crest"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="w-[1px] h-8 bg-white/20" />
+                <div className="w-12 h-12 relative flex-shrink-0 bg-white/5 rounded-xl p-1.5 border border-white/10 shadow-lg" title="Office of Student Affairs (OSA)">
+                  <Image
+                    src="/images/osa-logo.png"
+                    alt="Office of Student Affairs (OSA) Crest"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="w-[1px] h-8 bg-white/20" />
+                <div className="w-12 h-12 relative flex-shrink-0 bg-white/5 rounded-xl p-1.5 border border-white/10 shadow-lg" title="AIUB Students Finance Club">
+                  <Image
+                    src="/images/club-logo.png"
+                    alt="AIUB Students Finance Club Crest"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-center sm:justify-start gap-2">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-400 bg-brand-green/10 px-2 py-0.5 rounded border border-brand-green/30">
+                    Official Governance
+                  </span>
+                  <span className="text-xs text-zinc-400 font-sans hidden sm:inline">
+                    American International University-Bangladesh
+                  </span>
+                </div>
+                <h4 className="font-heading font-bold text-sm sm:text-base text-white tracking-wide mt-1 uppercase">
+                  OFFICE OF STUDENT AFFAIRS (OSA) • AIUB
+                </h4>
+                <p className="text-xs text-zinc-400 font-sans leading-relaxed mt-0.5 max-w-xl">
+                  AIUB Students Finance Club is an officially recognized and chartered student organization operating under the Office of Student Affairs (OSA) at American International University-Bangladesh.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <Link
+                href="/about"
+                className="px-4 py-2 rounded-lg bg-white/5 hover:bg-brand-green hover:text-white border border-white/10 text-xs font-semibold tracking-wider uppercase transition-all duration-200"
+              >
+                Charter &amp; Objectives
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Club Introduction: "MORE THAN A FINANCE CLUB" */}
       <section className="py-20 lg:py-28 relative overflow-hidden bg-[#0a0c0a] border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

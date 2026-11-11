@@ -288,8 +288,31 @@ export function Navbar() {
               })}
             </nav>
 
-            {/* Desktop CTAs */}
+            {/* Desktop CTAs & Institutional Crests */}
             <div className="hidden lg:flex items-center space-x-3">
+              {/* AIUB & OSA Institutional Badges */}
+              <div className="flex items-center gap-2.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                <div className="relative w-7 h-7 flex-shrink-0" title="American International University-Bangladesh (AIUB)">
+                  <Image
+                    src="/images/aiub-logo.png"
+                    alt="AIUB Logo"
+                    width={28}
+                    height={28}
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+                <div className="w-[1px] h-4 bg-white/15" />
+                <div className="relative w-7 h-7 flex-shrink-0" title="Office of Student Affairs (OSA) - AIUB">
+                  <Image
+                    src="/images/osa-logo.png"
+                    alt="OSA AIUB Logo"
+                    width={28}
+                    height={28}
+                    className="object-contain w-full h-full"
+                  />
+                </div>
+              </div>
+
               <Link
                 href="/recruitment"
                 className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-heading font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-deep via-brand-green to-emerald-500 hover:from-brand-green hover:to-emerald-400 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
@@ -407,6 +430,19 @@ export function Navbar() {
 
             {/* Drawer Footer */}
             <div className="pt-6 border-t border-white/10 space-y-4">
+              {/* Institutional Endorsement */}
+              <div className="flex items-center justify-center gap-4 py-2 px-3 rounded-lg bg-white/5 border border-white/10">
+                <div className="flex items-center gap-2">
+                  <Image src="/images/aiub-logo.png" alt="AIUB Logo" width={24} height={24} className="object-contain" />
+                  <span className="text-[10px] font-semibold text-zinc-300">AIUB</span>
+                </div>
+                <div className="w-[1px] h-3.5 bg-white/15" />
+                <div className="flex items-center gap-2">
+                  <Image src="/images/osa-logo.png" alt="OSA Logo" width={24} height={24} className="object-contain" />
+                  <span className="text-[10px] font-semibold text-zinc-300">OSA</span>
+                </div>
+              </div>
+
               <Link
                 href="/recruitment"
                 className="w-full flex items-center justify-center gap-2 py-3 text-sm font-heading font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-deep to-brand-green rounded-lg shadow-lg shadow-emerald-500/20"

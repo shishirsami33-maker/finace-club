@@ -38,16 +38,29 @@ export default function ExecutiveCommitteePage() {
       {/* Page Header */}
       <section className="py-16 bg-[#080a08] border-b border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <span className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">
-              Governance &amp; Leadership
-            </span>
-            <h1 className="mt-4 font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white">
-              EXECUTIVE COMMITTEE (2026)
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-zinc-300 font-sans leading-relaxed">
-              The 15-member executive leadership body steering strategy, operations, competitions, member welfare, and corporate partnerships at AIUB Students Finance Club.
-            </p>
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="max-w-3xl">
+              <span className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">
+                Governance &amp; Leadership
+              </span>
+              <h1 className="mt-4 font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white">
+                EXECUTIVE COMMITTEE (2026)
+              </h1>
+              <p className="mt-4 text-base sm:text-lg text-zinc-300 font-sans leading-relaxed">
+                The 15-member executive leadership body steering strategy, operations, competitions, member welfare, and corporate partnerships at AIUB Students Finance Club.
+              </p>
+            </div>
+
+            {/* AIUB & OSA Crest Badges */}
+            <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 flex-shrink-0">
+              <div className="w-12 h-12 relative flex-shrink-0 bg-white/5 rounded-xl p-1.5 border border-white/10" title="American International University-Bangladesh">
+                <Image src="/images/aiub-logo.png" alt="AIUB Logo" width={48} height={48} className="object-contain w-full h-full" />
+              </div>
+              <div className="w-[1px] h-8 bg-white/15" />
+              <div className="w-12 h-12 relative flex-shrink-0 bg-white/5 rounded-xl p-1.5 border border-white/10" title="Office of Student Affairs (OSA)">
+                <Image src="/images/osa-logo.png" alt="OSA Logo" width={48} height={48} className="object-contain w-full h-full" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

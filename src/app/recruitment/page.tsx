@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   Sparkles,
   TrendingUp,
@@ -88,10 +89,19 @@ export default function RecruitmentPage() {
             Join the flagship financial society of American International University-Bangladesh. Build analytical dominance, lead national initiatives, and accelerate your career.
           </p>
 
-          <div className="mt-8 flex items-center justify-center gap-4 text-xs font-mono">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
             <span className="px-4 py-2 rounded-xl bg-black/60 border border-brand-green/40 text-emerald-300 font-bold flex items-center gap-2">
               <Clock className="w-4 h-4 text-brand-green" /> Deadline: {recruitment.deadline}
             </span>
+
+            {/* AIUB & OSA Sanction */}
+            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-zinc-300">
+              <Image src="/images/aiub-logo.png" alt="AIUB" width={20} height={20} className="object-contain" />
+              <span>AIUB</span>
+              <span className="text-white/20">•</span>
+              <Image src="/images/osa-logo.png" alt="OSA" width={20} height={20} className="object-contain" />
+              <span>OSA Sanctioned</span>
+            </div>
           </div>
         </div>
       </section>

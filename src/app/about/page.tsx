@@ -226,6 +226,93 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Institutional Governance: AIUB & Office of Student Affairs (OSA) */}
+      <section className="py-20 bg-[#070907] border-b border-white/5 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase bg-brand-green/10 px-3 py-1 rounded-full border border-brand-green/20">
+              Institutional Framework
+            </span>
+            <h2 className="mt-4 font-heading font-extrabold text-3xl sm:text-4xl uppercase tracking-tight text-white">
+              GOVERNANCE &amp; CHARTER
+            </h2>
+            <p className="mt-3 text-sm text-zinc-400 font-sans leading-relaxed">
+              Officially recognized and operating under the regulatory supervision and administrative patronage of AIUB.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* AIUB University Card */}
+            <div className="p-8 rounded-3xl bg-[#0f120f] border border-white/10 hover:border-brand-green/40 transition-all group flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 p-2 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <Image
+                      src="/images/aiub-logo.png"
+                      alt="American International University-Bangladesh Logo"
+                      width={56}
+                      height={56}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                      Parent Institution
+                    </span>
+                    <h3 className="font-heading font-bold text-xl text-white">
+                      American International University-Bangladesh
+                    </h3>
+                    <p className="text-xs text-zinc-400 font-sans">Estd. 1994 • Kuratoli, Dhaka</p>
+                  </div>
+                </div>
+                <p className="text-sm text-zinc-300 font-sans leading-relaxed">
+                  AIUB is committed to fostering academic rigor, technological advancement, and globally recognized business pedagogy. The university provides state-of-the-art campus infrastructure and institutional accreditation for all club symposiums and summits.
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
+                <span>Chartered University</span>
+                <span className="text-emerald-400 font-mono font-semibold">Institutional Patron</span>
+              </div>
+            </div>
+
+            {/* OSA Card */}
+            <div className="p-8 rounded-3xl bg-[#0f120f] border border-white/10 hover:border-brand-green/40 transition-all group flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 p-2 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                    <Image
+                      src="/images/osa-logo.png"
+                      alt="Office of Student Affairs (OSA) Logo"
+                      width={56}
+                      height={56}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                      Governing Directorate
+                    </span>
+                    <h3 className="font-heading font-bold text-xl text-white">
+                      Office of Student Affairs (OSA)
+                    </h3>
+                    <p className="text-xs text-zinc-400 font-sans">Central Directorate • Student Leadership</p>
+                  </div>
+                </div>
+                <p className="text-sm text-zinc-300 font-sans leading-relaxed">
+                  The Office of Student Affairs (OSA) orchestrates and regulates co-curricular excellence across AIUB. OSA oversees club constitution compliance, executive electoral transitions, official permissions, and inter-university delegate protocols.
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
+                <span>Regulatory Supervision</span>
+                <span className="text-emerald-400 font-mono font-semibold">Club Governance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. Advisor & Mentor Profiles (Dedicated Anchors) */}
       <section id="advisor" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
