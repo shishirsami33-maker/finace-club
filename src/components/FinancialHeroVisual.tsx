@@ -178,7 +178,7 @@ export function FinancialHeroVisual() {
           <div
             key={slide.image}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-30 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+              index === currentSlide ? 'opacity-20 scale-100' : 'opacity-0 scale-105 pointer-events-none'
             }`}
           >
             <Image
