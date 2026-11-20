@@ -19,6 +19,8 @@ import {
   Image as ImageIcon,
   FileText,
   ShieldCheck,
+  Building2,
+  GraduationCap,
 } from 'lucide-react';
 
 interface NavItem {
@@ -59,18 +61,37 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: 'PEOPLE',
+    label: 'EXECUTIVE BODY',
+    href: '/executive-committee',
     children: [
       {
-        label: 'Executive Committee',
+        label: 'Executive Committee 2026',
         href: '/executive-committee',
-        description: 'Meet the 15-member executive leadership body & advisors',
+        description: '15-member executive leadership body & portfolios',
         icon: Users,
       },
       {
-        label: 'Collaborations',
+        label: 'Faculty Advisory Body',
+        href: '/executive-committee#advisor',
+        description: 'Institutional guidance under Advisor Bohi Shajahan',
+        icon: GraduationCap,
+      },
+    ],
+  },
+  {
+    label: 'COLLABORATORS',
+    href: '/collaborations',
+    children: [
+      {
+        label: 'Corporate & Banking Partners',
         href: '/collaborations',
-        description: 'Strategic partners, banks, and institutional sponsors',
+        description: 'Commercial banks, asset managers & financial institutions',
+        icon: Building2,
+      },
+      {
+        label: 'Institutional & Academic Alliances',
+        href: '/collaborations',
+        description: 'CFA Society Bangladesh & inter-university networks',
         icon: ShieldCheck,
       },
     ],
@@ -194,11 +215,11 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+            <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5">
               {navItems.map((item) => {
                 if (item.children) {
                   const isOpen = openDropdown === item.label;
-                  const isActive = item.children.some((child) => pathname.startsWith(child.href));
+                  const isActive = item.children.some((child) => pathname.startsWith(child.href)) || (item.href ? pathname === item.href : false);
 
                   return (
                     <div
@@ -207,10 +228,10 @@ export function Navbar() {
                       onMouseEnter={() => handleMouseEnter(item.label)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <button
-                        type="button"
+                      <Link
+                        href={item.href || '#'}
                         aria-expanded={isOpen}
-                        className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                        className={`flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 py-2 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md ${
                           isActive
                             ? 'text-brand-green font-bold'
                             : 'text-zinc-200 hover:text-white hover:bg-white/5'
@@ -218,11 +239,11 @@ export function Navbar() {
                       >
                         {item.label}
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                          className={`w-3 h-3 xl:w-3.5 xl:h-3.5 transition-transform duration-200 ${
                             isOpen ? 'rotate-180 text-brand-green' : 'text-zinc-400'
                           }`}
                         />
-                      </button>
+                      </Link>
 
                       {/* Dropdown Menu */}
                       {isOpen && (
@@ -276,7 +297,7 @@ export function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href!}
-                    className={`px-3 py-2 text-xs font-semibold tracking-wider uppercase transition-colors rounded-md ${
+                    className={`px-2 xl:px-2.5 py-2 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md ${
                       isActive
                         ? 'text-brand-green font-bold'
                         : 'text-zinc-200 hover:text-white hover:bg-white/5'
