@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Building2,
   GraduationCap,
+  Moon,
 } from 'lucide-react';
 
 interface NavItem {
@@ -35,33 +36,29 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'HOME', href: '/' },
-  { label: 'ABOUT', href: '/about' },
+  { label: 'Home', href: '/' },
   {
-    label: 'ACTIVITIES',
+    label: 'Publications',
+    href: '/reports',
     children: [
-      {
-        label: 'Events & Competitions',
-        href: '/events',
-        description: 'National Olympiads, workshops, and case championships',
-        icon: Calendar,
-      },
-      {
-        label: 'Media Gallery',
-        href: '/gallery',
-        description: 'Curated photo archive of competitions & seminars',
-        icon: ImageIcon,
-      },
       {
         label: 'Reports & Publications',
         href: '/reports',
         description: 'Annual reports, post-event whitepapers, and research',
         icon: FileText,
       },
+      {
+        label: 'Finance Journal',
+        href: '/journal',
+        description: 'Monthly editorial analysis, capital markets & fintech',
+        icon: BookOpen,
+      },
     ],
   },
+  { label: 'Events', href: '/events' },
+  { label: 'Announcements', href: '/notices' },
   {
-    label: 'EXECUTIVE BODY',
+    label: 'Advisory & Executive Board',
     href: '/executive-committee',
     children: [
       {
@@ -76,10 +73,34 @@ const navItems: NavItem[] = [
         description: 'Institutional guidance under Advisor Bohi Shajahan',
         icon: GraduationCap,
       },
+      {
+        label: 'About the Club',
+        href: '/about',
+        description: 'Official objectives, organizational charter & heritage',
+        icon: ShieldCheck,
+      },
     ],
   },
   {
-    label: 'COLLABORATORS',
+    label: "The Members' Panel",
+    href: '/achievements',
+    children: [
+      {
+        label: 'The Wall of Excellence',
+        href: '/achievements',
+        description: 'Celebrating ambition & member achievement honors',
+        icon: Award,
+      },
+      {
+        label: 'Recruitment & Membership',
+        href: '/recruitment',
+        description: 'Join the next generation of financial leaders',
+        icon: Briefcase,
+      },
+    ],
+  },
+  {
+    label: 'Our Collaborators',
     href: '/collaborations',
     children: [
       {
@@ -96,41 +117,8 @@ const navItems: NavItem[] = [
       },
     ],
   },
-  {
-    label: 'INSIGHTS',
-    children: [
-      {
-        label: 'Finance Journal',
-        href: '/journal',
-        description: 'Monthly editorial analysis, capital markets & fintech',
-        icon: BookOpen,
-      },
-      {
-        label: 'Notices & Announcements',
-        href: '/notices',
-        description: 'Official club circulars, competition deadlines, and results',
-        icon: Bell,
-      },
-    ],
-  },
-  {
-    label: 'OPPORTUNITIES',
-    children: [
-      {
-        label: 'Opportunities Portal',
-        href: '/opportunities',
-        description: 'Verified corporate internships, jobs, and case challenges',
-        icon: Briefcase,
-      },
-      {
-        label: 'The Wall of Excellence',
-        href: '/achievements',
-        description: 'Celebrating ambition & member achievement honors',
-        icon: Award,
-      },
-    ],
-  },
-  { label: 'CONTACT', href: '/contact' },
+  { label: 'Photo Gallery', href: '/gallery' },
+  { label: 'Contact us', href: '/contact' },
 ];
 
 export function Navbar() {
@@ -183,38 +171,39 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled || !isHomepage
-            ? 'bg-[#080908]/90 backdrop-blur-md border-b border-white/10 shadow-xl py-3'
-            : 'bg-gradient-to-b from-black/80 via-black/30 to-transparent py-5'
+            ? 'bg-[#080908]/92 backdrop-blur-md border-b border-white/10 shadow-xl py-2.5'
+            : 'bg-gradient-to-b from-black/85 via-black/40 to-transparent py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-2 xl:gap-4 flex-nowrap w-full">
-            {/* Logo & Brand Identity */}
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 lg:gap-4 flex-nowrap w-full">
+            {/* 1. Left Logo (Stand-alone rounded container matching reference inspiration) */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 flex-shrink-0 group focus:outline-none focus:ring-2 focus:ring-brand-green/50 rounded-lg p-1"
+              className="flex items-center flex-shrink-0 group focus:outline-none focus:ring-2 focus:ring-brand-green/50 rounded-xl"
+              aria-label="AIUB Students Finance Club Home"
+              title="AIUB Students Finance Club"
             >
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-10 h-10 p-1 rounded-xl bg-white/5 border border-white/10 group-hover:border-brand-green/40 group-hover:bg-white/10 transition-all duration-300 shadow-sm flex items-center justify-center">
                 <Image
                   src="/images/club-logo.png"
-                  alt="AIUB Finance Club Logo"
-                  width={40}
-                  height={40}
+                  alt="AIUB Finance Club"
+                  width={36}
+                  height={36}
                   priority
-                  className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(7,139,37,0.3)]"
+                  className="w-full h-full object-contain filter drop-shadow-[0_1px_4px_rgba(7,139,37,0.3)] transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <span className="font-heading font-extrabold text-sm sm:text-base tracking-wider text-white group-hover:text-emerald-400 transition-colors uppercase whitespace-nowrap">
-                AIUB FINANCE CLUB
-              </span>
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 flex-shrink min-w-0">
+            {/* 2. Middle Navigation Links (Clean Title Case alignment) */}
+            <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-2 2xl:space-x-3.5 flex-shrink min-w-0">
               {navItems.map((item) => {
                 if (item.children) {
                   const isOpen = openDropdown === item.label;
-                  const isActive = item.children.some((child) => pathname.startsWith(child.href)) || (item.href ? pathname === item.href : false);
+                  const isActive =
+                    item.children.some((child) => pathname.startsWith(child.href)) ||
+                    (item.href ? pathname === item.href : false);
 
                   return (
                     <div
@@ -226,15 +215,15 @@ export function Navbar() {
                       <Link
                         href={item.href || '#'}
                         aria-expanded={isOpen}
-                        className={`flex items-center gap-1 px-1.5 xl:px-2.5 py-1.5 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md whitespace-nowrap ${
+                        className={`flex items-center gap-1 px-1.5 xl:px-2 py-1.5 text-[11.5px] xl:text-[13px] 2xl:text-[13.5px] font-medium font-sans tracking-normal transition-colors rounded-md whitespace-nowrap ${
                           isActive
-                            ? 'text-brand-green font-bold'
+                            ? 'text-brand-green font-semibold'
                             : 'text-zinc-200 hover:text-white hover:bg-white/5'
                         }`}
                       >
                         {item.label}
                         <ChevronDown
-                          className={`w-3 h-3 xl:w-3.5 xl:h-3.5 transition-transform duration-200 ${
+                          className={`w-3 h-3 transition-transform duration-200 ${
                             isOpen ? 'rotate-180 text-brand-green' : 'text-zinc-400'
                           }`}
                         />
@@ -248,6 +237,7 @@ export function Navbar() {
                               {item.children.map((child) => {
                                 const Icon = child.icon;
                                 const isChildActive = pathname === child.href;
+
                                 return (
                                   <Link
                                     key={child.href}
@@ -292,9 +282,9 @@ export function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href!}
-                    className={`px-1.5 xl:px-2.5 py-1.5 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md whitespace-nowrap ${
+                    className={`px-1.5 xl:px-2 py-1.5 text-[11.5px] xl:text-[13px] 2xl:text-[13.5px] font-medium font-sans tracking-normal transition-colors rounded-md whitespace-nowrap ${
                       isActive
-                        ? 'text-brand-green font-bold'
+                        ? 'text-brand-green font-semibold'
                         : 'text-zinc-200 hover:text-white hover:bg-white/5'
                     }`}
                   >
@@ -304,37 +294,51 @@ export function Navbar() {
               })}
             </nav>
 
-            {/* Desktop CTAs & Institutional Crests */}
-            <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
-              {/* AIUB & OSA Institutional Badges */}
-              <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
-                <div className="relative w-6 h-6 flex-shrink-0" title="American International University-Bangladesh (AIUB)">
-                  <Image
-                    src="/images/aiub-logo.png"
-                    alt="AIUB Logo"
-                    width={24}
-                    height={24}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
-                <div className="w-[1px] h-3.5 bg-white/15" />
-                <div className="relative w-6 h-6 flex-shrink-0" title="Office of Student Affairs (OSA) - AIUB">
-                  <Image
-                    src="/images/osa-logo.png"
-                    alt="OSA AIUB Logo"
-                    width={24}
-                    height={24}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
+            {/* 3. Right Side: AIUB Crest, OSA Crest, Maroon Moon Toggle & Join Button */}
+            <div className="hidden lg:flex items-center space-x-2 xl:space-x-2.5 flex-shrink-0">
+              {/* AIUB Official Crest */}
+              <div
+                className="relative w-8 h-8 rounded-full overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 p-1 flex items-center justify-center transition-all shadow-sm flex-shrink-0"
+                title="American International University-Bangladesh (AIUB)"
+              >
+                <Image
+                  src="/images/aiub-logo.png"
+                  alt="AIUB Crest"
+                  width={26}
+                  height={26}
+                  className="object-contain w-full h-full"
+                />
               </div>
 
+              {/* OSA Logo */}
+              <div
+                className="relative w-8 h-8 rounded-full overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 p-1 flex items-center justify-center transition-all shadow-sm flex-shrink-0"
+                title="Office of Student Affairs (OSA) - AIUB"
+              >
+                <Image
+                  src="/images/osa-logo.png"
+                  alt="OSA AIUB Logo"
+                  width={24}
+                  height={24}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+
+              {/* Maroon Moon Circle (Exact match with reference inspiration) */}
+              <div
+                className="relative w-8 h-8 rounded-full border border-red-900/70 bg-red-950/20 hover:bg-red-950/50 hover:border-red-700 flex items-center justify-center text-red-500 transition-all duration-300 shadow-sm flex-shrink-0 cursor-pointer group"
+                title="Theme Mode"
+              >
+                <Moon className="w-3.5 h-3.5 fill-red-500/20 group-hover:scale-110 transition-transform" />
+              </div>
+
+              {/* Join CTA */}
               <Link
                 href="/recruitment"
-                className="relative inline-flex items-center justify-center gap-1.5 px-3.5 xl:px-4 py-2 text-[11px] xl:text-xs font-heading font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-deep via-brand-green to-emerald-500 hover:from-brand-green hover:to-emerald-400 rounded-xl shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all duration-300 whitespace-nowrap flex-shrink-0"
+                className="relative inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-heading font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-deep via-brand-green to-emerald-500 hover:from-brand-green hover:to-emerald-400 rounded-xl shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all duration-300 whitespace-nowrap flex-shrink-0"
               >
                 <TrendingUp className="w-3 h-3" />
-                JOIN THE CLUB
+                JOIN
               </Link>
             </div>
 
@@ -405,7 +409,7 @@ export function Navbar() {
                         <button
                           type="button"
                           onClick={() => toggleMobileSubmenu(item.label)}
-                          className="w-full flex items-center justify-between py-2.5 text-sm font-heading font-semibold text-zinc-200 hover:text-emerald-400 tracking-wider uppercase text-left"
+                          className="w-full flex items-center justify-between py-2.5 text-sm font-sans font-medium text-zinc-200 hover:text-emerald-400 tracking-normal text-left"
                         >
                           {item.label}
                           <ChevronDown
@@ -435,7 +439,7 @@ export function Navbar() {
                     <Link
                       key={item.label}
                       href={item.href!}
-                      className="block py-2.5 text-sm font-heading font-semibold text-zinc-200 hover:text-emerald-400 tracking-wider uppercase border-b border-white/5"
+                      className="block py-2.5 text-sm font-sans font-medium text-zinc-200 hover:text-emerald-400 tracking-normal border-b border-white/5"
                     >
                       {item.label}
                     </Link>
@@ -457,6 +461,10 @@ export function Navbar() {
                   <Image src="/images/osa-logo.png" alt="OSA Logo" width={24} height={24} className="object-contain" />
                   <span className="text-[10px] font-semibold text-zinc-300">OSA</span>
                 </div>
+                <div className="w-[1px] h-3.5 bg-white/15" />
+                <div className="w-6 h-6 rounded-full border border-red-900/70 bg-red-950/20 flex items-center justify-center text-red-500">
+                  <Moon className="w-3 h-3 fill-red-500/20" />
+                </div>
               </div>
 
               <Link
@@ -477,4 +485,3 @@ export function Navbar() {
     </>
   );
 }
-
