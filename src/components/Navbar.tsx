@@ -188,34 +188,29 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2 xl:gap-4 flex-nowrap w-full">
             {/* Logo & Brand Identity */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-green/50 rounded-lg p-1"
+              className="flex items-center gap-2.5 flex-shrink-0 group focus:outline-none focus:ring-2 focus:ring-brand-green/50 rounded-lg p-1"
             >
-              <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/images/club-logo.png"
-                  alt="AIUB Students Finance Club Emblem"
-                  width={44}
-                  height={44}
+                  alt="AIUB Finance Club Logo"
+                  width={40}
+                  height={40}
                   priority
                   className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(7,139,37,0.3)]"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-sm sm:text-base tracking-wider text-white group-hover:text-emerald-400 transition-colors uppercase">
-                  AIUB FINANCE CLUB
-                </span>
-                <span className="font-sans text-[10px] sm:text-[11px] text-brand-grey uppercase tracking-widest">
-                  Students Finance Club • AIUB
-                </span>
-              </div>
+              <span className="font-heading font-extrabold text-sm sm:text-base tracking-wider text-white group-hover:text-emerald-400 transition-colors uppercase whitespace-nowrap">
+                AIUB FINANCE CLUB
+              </span>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5">
+            <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 flex-shrink min-w-0">
               {navItems.map((item) => {
                 if (item.children) {
                   const isOpen = openDropdown === item.label;
@@ -231,7 +226,7 @@ export function Navbar() {
                       <Link
                         href={item.href || '#'}
                         aria-expanded={isOpen}
-                        className={`flex items-center gap-1 xl:gap-1.5 px-2 xl:px-2.5 py-2 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md ${
+                        className={`flex items-center gap-1 px-1.5 xl:px-2.5 py-1.5 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md whitespace-nowrap ${
                           isActive
                             ? 'text-brand-green font-bold'
                             : 'text-zinc-200 hover:text-white hover:bg-white/5'
@@ -297,7 +292,7 @@ export function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href!}
-                    className={`px-2 xl:px-2.5 py-2 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md ${
+                    className={`px-1.5 xl:px-2.5 py-1.5 text-[11px] xl:text-xs font-semibold tracking-normal xl:tracking-wider uppercase transition-colors rounded-md whitespace-nowrap ${
                       isActive
                         ? 'text-brand-green font-bold'
                         : 'text-zinc-200 hover:text-white hover:bg-white/5'
@@ -310,25 +305,25 @@ export function Navbar() {
             </nav>
 
             {/* Desktop CTAs & Institutional Crests */}
-            <div className="hidden lg:flex items-center space-x-3">
+            <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
               {/* AIUB & OSA Institutional Badges */}
-              <div className="flex items-center gap-2.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
-                <div className="relative w-7 h-7 flex-shrink-0" title="American International University-Bangladesh (AIUB)">
+              <div className="flex items-center gap-2 px-2 py-1 rounded-lg bg-white/5 border border-white/10 flex-shrink-0">
+                <div className="relative w-6 h-6 flex-shrink-0" title="American International University-Bangladesh (AIUB)">
                   <Image
                     src="/images/aiub-logo.png"
                     alt="AIUB Logo"
-                    width={28}
-                    height={28}
+                    width={24}
+                    height={24}
                     className="object-contain w-full h-full"
                   />
                 </div>
-                <div className="w-[1px] h-4 bg-white/15" />
-                <div className="relative w-7 h-7 flex-shrink-0" title="Office of Student Affairs (OSA) - AIUB">
+                <div className="w-[1px] h-3.5 bg-white/15" />
+                <div className="relative w-6 h-6 flex-shrink-0" title="Office of Student Affairs (OSA) - AIUB">
                   <Image
                     src="/images/osa-logo.png"
                     alt="OSA AIUB Logo"
-                    width={28}
-                    height={28}
+                    width={24}
+                    height={24}
                     className="object-contain w-full h-full"
                   />
                 </div>
@@ -336,9 +331,9 @@ export function Navbar() {
 
               <Link
                 href="/recruitment"
-                className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-heading font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-deep via-brand-green to-emerald-500 hover:from-brand-green hover:to-emerald-400 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+                className="relative inline-flex items-center justify-center gap-1.5 px-3.5 xl:px-4 py-2 text-[11px] xl:text-xs font-heading font-bold uppercase tracking-wider text-white bg-gradient-to-r from-brand-deep via-brand-green to-emerald-500 hover:from-brand-green hover:to-emerald-400 rounded-xl shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all duration-300 whitespace-nowrap flex-shrink-0"
               >
-                <TrendingUp className="w-3.5 h-3.5" />
+                <TrendingUp className="w-3 h-3" />
                 JOIN THE CLUB
               </Link>
             </div>

@@ -171,14 +171,14 @@ export function FinancialHeroVisual() {
   }, []);
 
   return (
-    <div className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#050505] pt-24 pb-16">
-      {/* 1. Cinematic Background Slideshow */}
+    <div className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#050505] pt-36 sm:pt-40 lg:pt-44 pb-20">
+      {/* 1. Cinematic Background Slideshow (Visible & Dynamic) */}
       <div className="absolute inset-0 z-0">
         {heroSlides.map((slide, index) => (
           <div
             key={slide.image}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-20 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+              index === currentSlide ? 'opacity-55 scale-100' : 'opacity-0 scale-105 pointer-events-none'
             }`}
           >
             <Image
@@ -186,73 +186,30 @@ export function FinancialHeroVisual() {
               alt={slide.caption}
               fill
               priority={index === 0}
-              className="object-cover filter contrast-110 brightness-90 transition-transform duration-7000 ease-linear"
+              className="object-cover filter contrast-105 brightness-100 transition-transform duration-7000 ease-linear"
             />
           </div>
         ))}
 
-        {/* Cinematic dark & green vignette overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/75 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] z-10" />
-        <div className="absolute inset-0 financial-grid z-10 opacity-30" />
+        {/* Softened cinematic vignette overlays - keeping event photos clearly visible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/45 to-black/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/50 via-transparent to-[#050505]/50 z-10" />
+        <div className="absolute inset-0 financial-grid z-10 opacity-20" />
       </div>
 
       {/* 2. Interactive / Visual Financial Chart Canvas Layer */}
-      <div className="absolute inset-0 z-10 pointer-events-none opacity-60">
+      <div className="absolute inset-0 z-10 pointer-events-none opacity-50">
         <canvas ref={canvasRef} className="w-full h-full" />
-      </div>
-
-      {/* Floating Telemetry Widgets (Desktop Energy Accents) */}
-      <div className="hidden xl:block absolute top-32 left-8 z-20 animate-float pointer-events-none">
-        <div className="p-4 rounded-2xl bg-black/60 border border-brand-green/40 backdrop-blur-xl shadow-2xl space-y-2 max-w-[220px]">
-          <div className="flex items-center justify-between">
-            <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 font-bold uppercase">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              LIVE MOMENTUM
-            </span>
-            <span className="text-[10px] font-mono text-zinc-500">DSE-30</span>
-          </div>
-          <div className="text-xl font-mono font-extrabold text-white tracking-tight flex items-baseline gap-1">
-            <span>+14.82%</span>
-            <span className="text-xs text-emerald-400 font-normal">Q4 Flow</span>
-          </div>
-          <p className="text-[10px] text-zinc-400 font-sans leading-tight">
-            Institutional portfolio inflow benchmark across Bangladesh banking desks.
-          </p>
-        </div>
-      </div>
-
-      <div className="hidden xl:block absolute top-48 right-8 z-20 animate-float [animation-delay:2s] pointer-events-none">
-        <div className="p-4 rounded-2xl bg-black/60 border border-emerald-500/40 backdrop-blur-xl shadow-2xl space-y-2 max-w-[230px]">
-          <div className="flex items-center justify-between">
-            <span className="flex items-center gap-1 text-[10px] font-mono text-yellow-300 font-bold uppercase">
-              <Sparkles className="w-3 h-3 text-yellow-300" />
-              CHAMPIONSHIP
-            </span>
-            <span className="text-[10px] font-mono text-zinc-400">2026</span>
-          </div>
-          <div className="text-sm font-heading font-extrabold text-white leading-snug">
-            National Financial Olympiad
-          </div>
-          <div className="inline-block px-2 py-0.5 rounded bg-brand-deep/80 text-emerald-300 text-[10px] font-mono font-bold">
-            BDT 150,000 Grand Prize
-          </div>
-          <p className="text-[10px] text-zinc-400 font-sans leading-tight">
-            40+ university delegations competing live at AIUB.
-          </p>
-        </div>
       </div>
 
       {/* 3. Hero Content Container */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Top Institutional Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-brand-green/30 backdrop-blur-md mb-6 hover:border-brand-green transition-colors">
-          <span className="w-2 h-2 rounded-full bg-brand-green animate-ping" />
-          <span className="text-xs font-mono font-medium tracking-wider text-emerald-300 uppercase">
-            Official Organization • AIUB
+        {/* Top Club Badge */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/75 border border-brand-green/50 backdrop-blur-md mb-8 hover:border-brand-green transition-colors shadow-lg shadow-emerald-500/15">
+          <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+          <span className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase">
+            AIUB FINANCE CLUB
           </span>
-          <span className="text-zinc-600">|</span>
-          <span className="text-xs font-sans text-zinc-300">Est. 2026</span>
         </div>
 
         {/* Primary Headline */}
