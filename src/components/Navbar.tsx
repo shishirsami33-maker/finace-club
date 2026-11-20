@@ -21,7 +21,6 @@ import {
   ShieldCheck,
   Building2,
   GraduationCap,
-  Moon,
 } from 'lucide-react';
 
 interface NavItem {
@@ -324,14 +323,6 @@ export function Navbar() {
                 />
               </div>
 
-              {/* Maroon Moon Circle (Exact match with reference inspiration) */}
-              <div
-                className="relative w-8 h-8 rounded-full border border-red-900/70 bg-red-950/20 hover:bg-red-950/50 hover:border-red-700 flex items-center justify-center text-red-500 transition-all duration-300 shadow-sm flex-shrink-0 cursor-pointer group"
-                title="Theme Mode"
-              >
-                <Moon className="w-3.5 h-3.5 fill-red-500/20 group-hover:scale-110 transition-transform" />
-              </div>
-
               {/* Join CTA */}
               <Link
                 href="/recruitment"
@@ -460,10 +451,6 @@ export function Navbar() {
                 <div className="flex items-center gap-2">
                   <Image src="/images/osa-logo.png" alt="OSA Logo" width={24} height={24} className="object-contain" />
                   <span className="text-[10px] font-semibold text-zinc-300">OSA</span>
-                </div>
-                <div className="w-[1px] h-3.5 bg-white/15" />
-                <div className="w-6 h-6 rounded-full border border-red-900/70 bg-red-950/20 flex items-center justify-center text-red-500">
-                  <Moon className="w-3 h-3 fill-red-500/20" />
                 </div>
               </div>
 
